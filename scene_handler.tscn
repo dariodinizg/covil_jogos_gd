@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://8u6542nsws4o"]
+
+[ext_resource type="Texture2D" uid="uid://1nkpdxhry2y2" path="res://Assets/Art/2D/Menu/Background/space.jpeg" id="1_8qqw3"]
+[ext_resource type="Script" path="res://Control.gd" id="1_jwtxc"]
+[ext_resource type="Texture2D" uid="uid://bwboeesslxcxl" path="res://Assets/Art/2D/Menu/buttons/joystickLeft.png" id="2_napn0"]
+[ext_resource type="Theme" uid="uid://beqj23iy87ad6" path="res://scene_handler.tres" id="2_o5hn7"]
+[ext_resource type="Texture2D" uid="uid://cm7gblk35u1w6" path="res://Assets/Art/2D/Menu/buttons/gear.png" id="3_7ha2n"]
+[ext_resource type="Texture2D" uid="uid://bd3qx686cb8x8" path="res://Assets/Art/2D/Menu/buttons/exitLeft.png" id="4_ghg7s"]
+
+[node name="SceneHandler" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_jwtxc")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="MainMenuScene" type="MarginContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer/MainMenuScene"]
+scale = Vector2(1.70311, 1.43733)
+texture = ExtResource("1_8qqw3")
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/MainMenuScene"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_o5hn7")
+alignment = 1
+
+[node name="Play_Btn" type="Button" parent="Control/MarginContainer/MainMenuScene/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o5hn7")
+text = "Play"
+icon = ExtResource("2_napn0")
+flat = true
+alignment = 0
+
+[node name="Options_Btn" type="Button" parent="Control/MarginContainer/MainMenuScene/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o5hn7")
+text = "Options"
+icon = ExtResource("3_7ha2n")
+flat = true
+alignment = 0
+
+[node name="Exit_Btn" type="Button" parent="Control/MarginContainer/MainMenuScene/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o5hn7")
+text = "Exit
+"
+icon = ExtResource("4_ghg7s")
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="Control/MarginContainer/MainMenuScene/VBoxContainer/Play_Btn" to="Control" method="_on_play_btn_pressed"]

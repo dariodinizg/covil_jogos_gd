@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://beqj23iy87ad6"]
+
+[ext_resource type="FontFile" uid="uid://css2yeflko5gb" path="res://Assets/Art/2D/Menu/buttons/montserrat_extrabold.otf" id="1_n6fa1"]
+
+[resource]
+default_font = ExtResource("1_n6fa1")
+default_font_size = 60
+Button/colors/font_hover_color = Color(0.913725, 1, 0.6, 1)
+Button/colors/font_pressed_color = Color(0.360784, 1, 0.898039, 1)
+Button/colors/icon_hover_color = Color(1, 1, 0.105882, 1)
+Button/colors/icon_pressed_color = Color(0.298039, 1, 0.917647, 1)
+Button/constants/h_separation = 50
