@@ -21,11 +21,13 @@ mesh = SubResource("BoxMesh_tfvrn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.652)
 
 [node name="ShotRange" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
 
 [node name="ShotRangeArea" type="CollisionShape3D" parent="ShotRange"]
 shape = SubResource("CylinderShape3D_xb5it")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.114819, 4.92889, -0.0373201)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.114819, 12.6475, -0.0373204)
 
 [connection signal="body_exited" from="ShotRange" to="." method="_on_shot_range_body_exited"]
