@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyf1xx20q8rle"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_qfb74"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dm0an"]
+albedo_color = Color(1, 0.223529, 1, 1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_qfb74")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_overlay = SubResource("StandardMaterial3D_dm0an")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0592192, 0.998245, 0, -0.998245, 0.0592192, 0, 10, 0)
