@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Bullets/Lead/lead_bullet.gd" id="1_8dj2k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y6udq"]
+radius = 0.05
+height = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gy0ps"]
 albedo_color = Color(0, 0, 0, 1)
@@ -12,9 +14,11 @@ emission = Color(0, 0.694118, 0, 1)
 emission_energy_multiplier = 16.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yv2sy"]
+radius = 0.05
+height = 0.2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_afml3"]
-radius = 0.7
+radius = 0.06
 
 [node name="LeadBullet" type="RigidBody3D"]
 collision_layer = 8
@@ -36,6 +40,7 @@ collision_layer = 8
 collision_mask = 5
 
 [node name="HitBoxShape" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.427931, 0, 0)
 shape = SubResource("SphereShape3D_afml3")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
