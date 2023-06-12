@@ -9,5 +9,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	node.position+=Vector3(0,0,0.01f);
+#	node.position+=Vector3(0,0,0.01f);
 	pass

@@ -1,18 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://tm6ob5xdcnim"]
+[gd_scene load_steps=2 format=3 uid="uid://tm6ob5xdcnim"]
 
-[ext_resource type="PackedScene" uid="uid://bjrfyn3j13ty3" path="res://Assets/Art/3D/Drone.glb" id="1_e474k"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_w4h2c"]
-size = Vector3(1, 2.05794, 2.11278)
+[ext_resource type="Script" path="res://Scripts/Enemy/Enemy.gd" id="1_msbmu"]
 
 [node name="Enemy" type="CharacterBody3D"]
 collision_layer = 5
 collision_mask = 19
+script = ExtResource("1_msbmu")
 
 [node name="Pivot" type="Node3D" parent="."]
 transform = Transform3D(1, -2.00089e-11, -9.31323e-10, -3.09228e-11, 1, 4.65661e-10, -9.31323e-10, 0, 1, 0, 0, 0)
-
-[node name="Drone" parent="Pivot" instance=ExtResource("1_e474k")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_w4h2c")
