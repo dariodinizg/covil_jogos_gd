@@ -1,24 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://corqtxk48svlc"]
+[gd_scene load_steps=4 format=3 uid="uid://corqtxk48svlc"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/Pistol/Pistol.gd" id="1_ia61s"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33w66"]
-albedo_color = Color(0.101961, 0.101961, 0.101961, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tfvrn"]
+[ext_resource type="PackedScene" uid="uid://bs1456xr0xd0t" path="res://Assets/Art/3D/12.glb" id="2_kq10u"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xb5it"]
 
 [node name="Pistol" type="Node3D"]
 script = ExtResource("1_ia61s")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.344, 0, 0, 0, 0.383, 0, 0, 0, 0.988, -0.000151634, 0.00219727, -0.00872803)
-material_override = SubResource("StandardMaterial3D_33w66")
-mesh = SubResource("BoxMesh_tfvrn")
-
 [node name="BulletOrigin" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.652)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.236191, -1.16519)
 
 [node name="ShotRange" type="Area3D" parent="."]
 collision_layer = 0
@@ -29,5 +20,10 @@ shape = SubResource("CylinderShape3D_xb5it")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.114819, 12.6475, -0.0373204)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="12" parent="Node3D" instance=ExtResource("2_kq10u")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [connection signal="body_exited" from="ShotRange" to="." method="_on_shot_range_body_exited"]
