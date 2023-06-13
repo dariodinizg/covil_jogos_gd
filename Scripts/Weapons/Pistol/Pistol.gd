@@ -6,6 +6,11 @@ const HANDLER_NAME = ""
 @export var shot_range = 8.0
 @export var ammo_amount = 6
 
+func _process(delta):
+	# For debug pourpose only
+	if Input.is_action_just_pressed("shoot"):
+		shoot(ammo_type["lead"])
+
 func _ready():
 	$ShotRange/ShotRangeArea.shape.radius = shot_range
 
